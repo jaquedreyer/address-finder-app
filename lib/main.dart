@@ -13,6 +13,7 @@ class CepFinder extends StatelessWidget {
     return MaterialApp(
       title: 'CEP Finder',
       theme: ThemeData(
+        fontFamily: 'Roboto',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),

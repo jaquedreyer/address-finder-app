@@ -1,3 +1,4 @@
+import 'package:cep_finder/presentation/widget/custom_cep_input.dart';
 import 'package:cep_finder/utils/constants/images.dart';
 import 'package:flutter/material.dart';
 
@@ -23,18 +24,13 @@ class _HomePageState extends State<HomePage> {
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.2,
-                  child: Image.asset(AppImages.logo,
-                  width: 100,
-                  height: 100,),
+                  child: Image.asset(
+                    AppImages.logo,
+                    width: 100,
+                    height: 100,
+                  ),
                 ),
-                const SizedBox(
-                  height: 16,
-                ),
-                TextFormField(
-                    decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'CEP',
-                        prefixIcon: Icon(Icons.map_outlined))),
+                CustomCepInputWidget(),
                 const SizedBox(
                   height: 16,
                 ),

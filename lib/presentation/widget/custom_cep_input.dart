@@ -1,3 +1,4 @@
+import 'package:cep_finder/utils/cep_input_formatter.dart';
 import 'package:cep_finder/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -35,6 +36,7 @@ class _CustomCepInputWidgetState extends State<CustomCepInputWidget> {
         keyboardType: TextInputType.number,
         inputFormatters: [
           FilteringTextInputFormatter.digitsOnly,
+          CepInputFormatter(),
         ],
       ),
     );

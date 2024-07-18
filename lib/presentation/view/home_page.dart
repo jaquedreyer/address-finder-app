@@ -1,5 +1,7 @@
+import 'package:cep_finder/presentation/widget/custom_button.dart';
 import 'package:cep_finder/presentation/widget/custom_cep_input.dart';
 import 'package:cep_finder/utils/constants/images.dart';
+import 'package:cep_finder/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,7 +21,8 @@ class _HomePageState extends State<HomePage> {
         ),
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
+            padding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
             child: Column(
               children: [
                 SizedBox(
@@ -34,7 +37,10 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 16,
                 ),
-                ElevatedButton(onPressed: () {}, child: const Text('Consultar'))
+                CustomButtonWidget(
+                  text: StringsConstants.search,
+                  onButtonPressed: () {},
+                )
               ],
             ),
           ),

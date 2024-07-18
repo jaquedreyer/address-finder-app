@@ -1,0 +1,5 @@
+import 'package:flutter/material.dart';
+
+class CustomColors {
+  static const Color backgroundColor = Color(0xFFF45558);
+}

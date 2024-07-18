@@ -1,3 +1,4 @@
+import 'package:cep_finder/utils/constants/images.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,10 +21,11 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                Image.asset(
-                  'assets/location_pin.png',
-                  height: 76,
-                  width: 76,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.2,
+                  child: Image.asset(AppImages.logo,
+                  width: 100,
+                  height: 100,),
                 ),
                 const SizedBox(
                   height: 16,

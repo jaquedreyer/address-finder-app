@@ -1,5 +1,6 @@
 import 'package:cep_finder/presentation/widget/custom_button.dart';
 import 'package:cep_finder/presentation/widget/custom_cep_input.dart';
+import 'package:cep_finder/presentation/widget/custom_cep_result.dart';
 import 'package:cep_finder/utils/constants/images.dart';
 import 'package:cep_finder/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,9 @@ class _HomePageState extends State<HomePage> {
                 CustomButtonWidget(
                   text: StringsConstants.search,
                   onButtonPressed: () {},
-                )
+                ),
+                SizedBox(height: 16.0,),
+                CustomCepResultWidget(),
               ],
             ),
           ),

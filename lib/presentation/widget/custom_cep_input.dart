@@ -3,42 +3,36 @@ import 'package:cep_finder/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class CustomCepInputWidget extends StatefulWidget {
-  const CustomCepInputWidget({super.key});
+class CustomCepInputWidget extends StatelessWidget {
+  final void Function(String)? onChanged;
+  final TextEditingController cepController;
 
-  @override
-  State<CustomCepInputWidget> createState() => _CustomCepInputWidgetState();
-}
-
-class _CustomCepInputWidgetState extends State<CustomCepInputWidget> {
-  final _formKey = GlobalKey<FormState>();
-  final _cepController = TextEditingController();
+  const CustomCepInputWidget(
+      {super.key, required this.onChanged, required this.cepController});
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: TextFormField(
-        validator: (value) {
-          if (value!.isEmpty) {
-            return StringsConstants.cepValido;
-          } else if (value.length != 8) {
-            return StringsConstants.cep8digitos;
-          }
-          return null;
-        },
-        controller: _cepController,
-        decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: StringsConstants.cep,
-          prefixIcon: Icon(Icons.map_outlined),
-        ),
-        keyboardType: TextInputType.number,
-        inputFormatters: [
-          FilteringTextInputFormatter.digitsOnly,
-          CepInputFormatter(),
-        ],
+    return TextFormField(
+      validator: (value) {
+        if (value!.isEmpty) {
+          return StringsConstants.cepValido;
+        } else if (value.length != 8) {
+          return StringsConstants.cep8digitos;
+        }
+        return null;
+      },
+      onChanged: onChanged,
+      controller: cepController,
+      decoration: const InputDecoration(
+        border: OutlineInputBorder(),
+        labelText: StringsConstants.cep,
+        prefixIcon: Icon(Icons.map_outlined),
       ),
+      keyboardType: TextInputType.number,
+      inputFormatters: [
+        FilteringTextInputFormatter.digitsOnly,
+        CepInputFormatter(),
+      ],
     );
   }
 }

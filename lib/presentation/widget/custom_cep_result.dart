@@ -1,15 +1,36 @@
+import 'package:cep_finder/features/address/domain/entities/address.dart';
+import 'package:cep_finder/utils/constants/images.dart';
 import 'package:flutter/material.dart';
 
-class CustomCepResultWidget extends StatefulWidget {
-  const CustomCepResultWidget({super.key});
+class CustomCepResultWidget extends StatelessWidget {
+  final String cardTitle;
+  final Address address;
 
-  @override
-  State<CustomCepResultWidget> createState() => _CustomCepResultWidgetState();
-}
+  const CustomCepResultWidget(
+      {super.key, required this.address, required this.cardTitle});
 
-class _CustomCepResultWidgetState extends State<CustomCepResultWidget> {
+
   @override
   Widget build(BuildContext context) {
-    return Expanded(child: Text('Endereço:'));
+    return Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+           leading: Image.asset(
+                        AppImages.logo,
+                        width: 35,
+                        height: 35,
+                      ),
+            title: Text(
+              cardTitle,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+            subtitle: Text(
+                '${address.streetName}, ${address.neighborhood}, ${address.city} - ${address.uf}'),
+          ),
+        ],
+      ),
+    );
   }
 }

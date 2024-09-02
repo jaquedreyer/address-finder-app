@@ -1,4 +1,4 @@
-import 'package:cep_finder/presentation/view/home_page.dart';
+import 'package:cep_finder/presentation/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

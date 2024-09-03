@@ -1,6 +1,14 @@
-# Address finder
+<p align="center">
+ <img alt="App Logo" width="100" img src= "./assets/location_pin.png" >      
+  <h1 align="center">Address Finder App</h1>
+</p>
 
-A Flutter application to search for an address using postcode.  
+A Flutter application that allows users to input a Brazilian CEP (Código de Endereçamento Postal) code and retrieve the corresponding address information. 
+
+<p align="center">
+<img src= "./assets/Screenshot_homepage.png" width="22%">    <img src="./assets/Screenshot_cep_result.png" width="22%">
+<img src="./assets/Screenshot_warning.png" width="22%">   
+</p>
 
 ## Table of Contents
 
@@ -13,9 +21,9 @@ A Flutter application to search for an address using postcode.
 
 ## Features
 
-- [ ] Insert here
-- [ ] Insert here
-- [ ] Insert here 
+- [ ] Users can easily input any valid Brazilian CEP code
+- [ ] The app fetches and displays the complete address, including street name, neighborhood, city, state, and postal code
+- [ ] Provides informative error messages for invalid CEP codes
 
 ## Installation
 
@@ -45,7 +53,13 @@ flutter run
   - [Flutter](http://www.dropwizard.io/1.0.2/docs/) - An open source framework by Google for building multi-platform applications 
   - [Dart](https://maven.apache.org/) - The programming language 
 - Packages
-  - [provider](https://pub.dev/packages/provider) - State management approach
+  - [bloc](https://pub.dev/packages/flutter_bloc) - State management approach
+  - [http](https://pub.dev/packages/http) - For making HTTP requests
+- API
+  - [ViaCEP](https://viacep.com.br) - A reliable API for fetching address data based on CEP codes 
+- Project Structure
+  - [Clean Arch](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) - Separate the different components of an application, creating modular, testable, and maintainable code
+  
  
 ## Contributing
 
